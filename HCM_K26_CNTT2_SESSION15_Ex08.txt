@@ -1,0 +1,35 @@
+SESSION15
+Bài 8: Kiểm Tra Vì Sao Dữ Liệu Khách Hàng CampusPay Bị Rò Rỉ Ra Ngoài
+
+Tên lớp: HCM K26 CNTT2
+Môn học: Nhập môn công nghệ thông tin
+Họ và tên: LƯƠNG THANH THƯ
+
+
+Phần 1: Phân tích lỗ hổng
+1. Dòng log gây rò rỉ
+Nguồn gốc là dòng 1 (08:15 T2): file campuspay_beta_users.xlsx, quyền Editor, phạm vi Anyone with the link. Đây là tổ hợp bị cấm bởi Quy tắc Cờ Đỏ.
+Cơ chế: ai có link cũng mở được mà không cần đăng nhập, link bị chuyển tiếp ra ngoài nên người lạ xem được dữ liệu của 200 sinh viên. Quyền Editor cho phép họ sửa, xóa và tải về.
+Các dòng còn lại không phải nguồn trực tiếp vì là Restricted hoặc không chứa dữ liệu khách hàng.
+
+2. 3 giả thuyết
+Quyền bị đổi sau đó, hoặc file nằm trong thư mục đang để công khai.
+Người lạ bấm “Request access” và chủ file lỡ đồng ý, hoặc thêm nhầm email.
+Rò rỉ qua người đã có quyền, ví dụ tài khoản B bị lộ mật khẩu.
+
+Phần 2: Sửa lỗi và Nghiệm thu
+3. Bảng cấu hình quyền chuẩn
+
+Tên file				Quyền đúng				Phạm vi đúng
+campuspay_beta_users.xlsx		Editor chỉ cho QA, người khác Viewer	Restricted
+campuspay_api_keys.txt			Viewer, chỉ người cần dùng		Restricted
+slide_pitch_v8.pptx			Commenter (góp ý)			Restricted
+
+File beta_users: chứa dữ liệu cá nhân của 200 người nên dùng mức chặt nhất.
+File api_keys: API key giống mật khẩu, lộ là bị dùng ngay.
+File slide: chỉ cần góp ý nên Commenter là đủ.
+
+4. Vô hiệu hóa link cũ
+Cách nhanh nhất: Share -> General access -> Restricted, có hiệu lực ngay.
+Set Expiration Date dùng khi chia sẻ có thời hạn rõ ràng (ví dụ mentor góp ý đến hết ngày pitching), hệ thống tự thu hồi.
+Thu hồi thủ công dùng ngay khi link bị lộ hoặc lỡ chia sẻ nhầm.

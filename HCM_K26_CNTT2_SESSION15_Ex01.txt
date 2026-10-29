@@ -1,0 +1,23 @@
+SESSION15
+Bài 1 : Loại bỏ rủi ro lưu trữ cục bộ trong dự án nhóm
+
+Tên lớp: HCM K26 CNTT2
+Môn học: Nhập môn công nghệ thông tin
+Họ và tên: LƯƠNG THANH THƯ
+
+Phần 1: Phân tích hậu quả
+- Lập luận “lưu nhiều bản là an toàn” của Nam là sai vì tất cả các bản đều nằm trên một ổ D: của một máy, và các bản cũ không có phần code mới.
+- Mất dữ liệu không khôi phục được: Ctrl+S ghi đè lên nội dung cũ nên đoạn code quan trọng nhất đã mất, không có lịch sử để quay lại.
+- Điểm chết duy nhất: file chỉ có trên một máy, máy hỏng hoặc dính virus là mất cả dự án.
+- Xung đột phiên bản: các tên như main_v2_final.py gửi qua Zalo khiến cả nhóm không biết bản nào mới nhất.
+- Mất thời gian: phải viết lại code từ trí nhớ nên chậm tiến độ của cả đội.
+
+Phần 2: Hybrid Workflow
+- Hybrid Workflow là làm việc trên máy cho nhanh và đồng bộ lên Cloud cho an toàn.
+- Chọn Google Drive hoặc OneDrive, vì cả hai đều có Version History.
+- Cài ứng dụng đồng bộ trên máy, ví dụ Google Drive for Desktop.
+- Chuyển dự án từ D:\Project\ vào thư mục đồng bộ.
+- Chỉ giữ một file main.py, bỏ cách đặt tên v1, v2, final.
+- Nhấn Ctrl+S rồi chờ biểu tượng dấu tích xanh.
+- Chia sẻ thư mục cho nhóm, không gửi file qua Zalo.
+- Khôi phục bằng 1-click: chuột phải vào file, chọn Version history, chọn bản trước khi xóa, bấm Restore.

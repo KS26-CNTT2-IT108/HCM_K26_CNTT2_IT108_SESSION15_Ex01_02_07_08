@@ -1,0 +1,34 @@
+SESSION15
+Bài 7: Giải Cứu Dữ Liệu Nhóm Startup Bị Mất Trên Máy Tính Cá Nhân
+
+Tên lớp: HCM K26 CNTT2
+Môn học: Nhập môn công nghệ thông tin
+Họ và tên: LƯƠNG THANH THƯ
+
+
+Phần 1: Phân tích vấn đề
+1. 
+
+Hạng mục		Rủi ro					Nguyên nhân						Xếp loại
+Business Plan		Mất trắng khi ổ cứng hỏng		Công nghệ: chỉ 1 bản trên 1 máy				Cao
+Mã nguồn HTML/CSS	USB hỏng hoặc mất là hết		Công nghệ: USB không bền, không có bản sao		Cao
+Database test user	Mất bản mới nhất, chỉ còn bản cũ 2 tuần	Tổ chức: không có quy trình cập nhật chung		Trung bình
+Slide Pitch		Có thể pitch bằng bản cũ		Tổ chức: đặt tên v7_final_FINAL, không rõ bản mới nhất	Trung bình
+Tài liệu SRS		Không biết bản nào đúng			Tổ chức: gửi email qua lại nhiều lần			Trung bình
+
+2. Hiện tượng 23 phiên bản
+Tên kỹ thuật là Version Sprawl (xung đột phiên bản).
+Nguyên nhân: mỗi lần gửi đi gửi lại là sinh thêm một bản sao, không có “nguồn sự thật duy nhất”, sửa thủ công nên dễ ghi đè lên nhau.
+Hậu quả: build nhầm bản cũ, mất công sức, sai đặc tả, khó truy vết lỗi.
+
+Phần 2: Sửa lỗi và Nghiệm thu
+3. Hybrid Workflow
+LOCAL (sửa file, Ctrl+S) --> AUTO SYNC (đồng bộ ngầm) --> CLOUD (lưu + Version History)
+Phần mềm: Google Drive for Desktop.
+Thư mục sync: CampusPay\ (BusinessPlan, SourceCode, TestData, Pitch, SRS).
+Thư mục không sync: game, phim, nhạc, Downloads, file tạm.
+
+4. Bẫy gập máy sớm
+Biểu tượng: hai mũi tên xoay là đang đồng bộ, dấu tích xanh là xong, dấu chấm than là lỗi.
+Khi gập máy, đồng bộ bị dừng, Cloud vẫn giữ bản cũ.
+Cách làm đúng: nhấn Ctrl+S, chờ dấu tích xanh “Synced”, rồi mới gập máy.

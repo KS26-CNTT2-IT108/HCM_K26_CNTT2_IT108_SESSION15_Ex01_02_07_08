@@ -1,0 +1,20 @@
+SESSION15
+Bài 2 : Ngăn chặn rò rỉ dữ liệu do chia sẻ sai quyền
+
+Tên lớp: HCM K26 CNTT2
+Môn học: Nhập môn công nghệ thông tin
+Họ và tên: LƯƠNG THANH THƯ
+
+
+Phần 1: Vì sao vi phạm “Quy tắc Cờ Đỏ Bảo mật”
++ Viewer chỉ xem, Commenter xem và góp ý, Editor sửa, xóa và chia sẻ tiếp.
++ An đã ghép ba yếu tố nguy hiểm lại với nhau:
++ Anyone with the link: ai có link cũng vào được, không cần đăng nhập.
++ Quyền Editor: người vào có thể xóa sạch dữ liệu.
++ Dữ liệu nhạy cảm: danh sách SĐT khách hàng.
++ Kết quả là link bị lộ lên mạng xã hội, dữ liệu bị xóa và không truy vết được người làm.
+
+Phần 2: Cấu trúc phân quyền chuẩn
+- (1) Quyền cho cộng tác viên: Editor nếu bạn ấy cần sửa, Commenter nếu chỉ góp ý. Nguyên tắc là cấp quyền tối thiểu.
+- (2) Chế độ an toàn: Restricted, chỉ thêm đích danh email của cộng tác viên, người lạ có link cũng bị chặn.
+- (3) Ngăn mời thêm người lạ: tắt tùy chọn “Editors can change permissions and share” để chỉ chủ sở hữu mới được mời thêm.
